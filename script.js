@@ -1,9 +1,9 @@
-// script.js
 const descriptionInput = document.getElementById('description');
 const amountInput = document.getElementById('amount');
 const typeSelect = document.getElementById('type');
 const addBtn = document.getElementById('add-btn');
 const resetBtn = document.getElementById('reset-btn');
+const DeleteAllbtn = document.getElementById('DeleteAll');
 const totalIncome = document.getElementById('total-income');
 const totalExpense = document.getElementById('total-expense');
 const netBalance = document.getElementById('net-balance');
@@ -46,6 +46,25 @@ function clearInputs() {
     amountInput.value = '';
 }
 
+DeleteAllbtn.addEventListener('click', () => {
+    document.getElementById('total-income').textContent = '0.00';
+    document.getElementById('total-expense').textContent = '0.00';
+    document.getElementById('net-balance').textContent = '0.00';
+
+    // Clear the entry list
+    const entryList = document.getElementById('entry-list');
+    while (entryList.firstChild) {
+        entryList.removeChild(entryList.firstChild);
+    }
+
+    // Clear the entries array
+    entries = [];
+
+    // Save the empty array to local storage
+    saveData();
+});
+
+
 function displayEntries() {
     entryList.innerHTML = '';
 
@@ -55,7 +74,8 @@ function displayEntries() {
         if (filter === 'all' || filter === entry.type) {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                ${entry.description} - $${entry.amount.toFixed(2)}
+                <span>${entry.description} -
+                <span class="amount ${entry.type === 'income' ? 'income' : 'expense'}">$${entry.amount.toFixed(2)}</span></span>
                 <span class="actions">
                     <button class="edit-btn">Edit</button>
                     <button class="delete-btn">Delete</button>
@@ -97,9 +117,9 @@ function calculateSummary() {
     totalIncome = totalIncome.toFixed(2);
     totalExpense = totalExpense.toFixed(2);
     const netBalanceValue = parseFloat(totalIncome) - parseFloat(totalExpense);
+    document.getElementById('total-income').textContent = totalIncome;
+    document.getElementById('total-expense').textContent = totalExpense;
     netBalance.textContent = netBalanceValue.toFixed(2);
-    totalIncome.textContent = totalIncome;
-    totalExpense.textContent = totalExpense;
 }
 
 function getFilter() {

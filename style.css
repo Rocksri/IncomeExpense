@@ -1,6 +1,6 @@
 /* style.css */
 body {
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -9,68 +9,81 @@ body {
     background-color: #f4f4f4;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+}
 .container {
     background-color: #fff;
     padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-}
+    border-radius: 15px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+    }
 
-.filters {
-    display: flex;
-    margin-bottom: 20px;
-}
+    .form-container {
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #cccccc81;
+            border-radius: 5px;
+        }
 
-.filters input[type="radio"] {
-    margin-right: 5px;
-}
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .select_optn {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .summary {
+        p {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 
-.form-container {
-    margin-bottom: 20px;
-}
+    .filters {
+        display: flex;
 
-input[type="text"],
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+        .filters input[type="radio"] {
+            margin-right: 5px;
+        }
+    }
+    .entries ul {
+        list-style: none;
+        padding: 0;
+    }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
+    .entries li {
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
 
-.summary {
-    margin-bottom: 20px;
-}
+    .entries li:last-child {
+        border-bottom: none;
+    }
 
-.entries ul {
-    list-style: none;
-    padding: 0;
-}
+    .entries li .actions {
+        margin-left: 10px;
+    }
 
-.entries li {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-}
+    #DeleteAll {
+        border-radius: 5px;
+        width: 20%;
+        align-self: center;
+    }
 
-.entries li:last-child {
-    border-bottom: none;
-}
-
-.entries li .actions {
-    margin-left: 10px;
 }

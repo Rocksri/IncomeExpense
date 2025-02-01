@@ -7,36 +7,40 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container flex">
         <h1>Income & Expense Tracker</h1>
-        <div class="filters">
-            <input type="radio" id="all" name="filter" value="all" checked>
-            <label for="all">All</label>
-            <input type="radio" id="income" name="filter" value="income">
-            <label for="income">Income</label>
-            <input type="radio" id="expense" name="filter" value="expense">
-            <label for="expense">Expense</label>
-        </div>
-        <div class="form-container">
+        <div class="form-container flex">
+            <h2>Add new Income & Expense</h2>
             <input type="text" id="description" placeholder="Description" required>
             <input type="number" id="amount" placeholder="Amount" required>
-            <select id="type">
-                <option value="income">Income</option>
-                <option value="expense">Expense</option>
-            </select>
-            <button id="add-btn">Add</button>
-            <button id="reset-btn">Reset</button>
+            <div class="select_optn">
+                <select id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button id="add-btn">Add</button>
+                <button id="reset-btn">Reset</button>
+            </div>
         </div>
-        <div class="summary">
+        <div class="summary flex">
             <h2>Summary</h2>
             <p>Total Income: <span id="total-income">0.00</span></p>
             <p>Total Expenses: <span id="total-expense">0.00</span></p>
             <p>Net Balance: <span id="net-balance">0.00</span></p>
         </div>
-        <div class="entries">
+        <div class="entries flex">
             <h2>Entries</h2>
+            <div class="filters">
+                <input type="radio" id="all" name="filter" value="all" checked>
+                <label for="all">All</label>
+                <input type="radio" id="income" name="filter" value="income">
+                <label for="income">Income</label>
+                <input type="radio" id="expense" name="filter" value="expense">
+                <label for="expense">Expense</label>
+            </div>
             <ul id="entry-list"></ul>
         </div>
+        <button id="DeleteAll">DeleteAll</button>
     </div>
     <script src="script.js"></script>
 </body>
