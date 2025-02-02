@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container flex">
+    <div class="container grid gap-[5%]">
         <h1>Income & Expense Tracker</h1>
-        <div class="form-container flex">
+        <div class="form-container grid gap-[5%]">
             <h2>Add new Income & Expense</h2>
-            <input type="text" id="description" placeholder="Description" required>
-            <input type="number" id="amount" placeholder="Amount" required>
+            <div class="inputbox">
+                <input type="text" id="description" required>
+                <span>Description</span>
+            </div>
+            <div class="inputbox">
+                <input type="number" id="amount" required>
+                <span>Amount</span>
+            </div>
             <div class="select_optn">
                 <select id="type">
                     <option value="income">Income</option>
@@ -24,13 +30,13 @@
         </div>
         <div class="summary flex">
             <h2>Summary</h2>
-            <p>Total Income: <span id="total-income">0.00</span></p>
-            <p>Total Expenses: <span id="total-expense">0.00</span></p>
-            <p>Net Balance: <span id="net-balance">0.00</span></p>
+            <p>Total Income : <span id="total-income">0.00</span></p>
+            <p>Total Expenses : <span id="total-expense">0.00</span></p>
+            <p>Net Balance : <span id="net-balance">0.00</span></p>
         </div>
         <div class="entries flex">
             <h2>Entries</h2>
-            <div class="filters">
+            <div class="filters flex">
                 <input type="radio" id="all" name="filter" value="all" checked>
                 <label for="all">All</label>
                 <input type="radio" id="income" name="filter" value="income">
@@ -43,5 +49,6 @@
         <button id="DeleteAll">DeleteAll</button>
     </div>
     <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
