@@ -1,0 +1,107 @@
+:root,
+body {
+    color: #fff;
+    height: 100%;
+    overflow: hidden;
+    background: #27374D;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+div {
+    justify-items: center;
+    h1 {
+        background: 50% 100% / 100% 50% no-repeat radial-gradient(ellipse at bottom, #9DB2BF, transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 4vw;
+        animation: reveal 2000ms ease-in-out forwards 200ms,
+        glow 2500ms linear infinite 2000ms;
+    }
+}
+@keyframes reveal {
+    80% {
+        letter-spacing: 8px;
+    }
+
+    100% {
+        background-size: 300% 300%;
+    }
+}
+
+@keyframes glow {
+    40% {
+        text-shadow: 0 0 8px #9DB2BF;
+    }
+}
+
+
+.loginform {
+    display: grid;
+    gap: 10%;
+    width: 60%;
+    .inputbox {
+        position: relative;
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #9DB2BF;
+            background-color: #27374D;
+            border-radius: 5px;
+            outline: none;
+            color: #EFE1D1;
+            font-size: 1em;
+            transition: 0.5s;
+        }
+
+        span {
+            position: absolute;
+            top: 0%;
+            right: -0%;
+            padding: 10px;
+            pointer-events: none;
+            color: #DDE6ED;
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+    }
+
+    .inputbox input:valid~span,
+    .inputbox input:focus~span {
+        color: #DDE6ED;
+        transform: translateX(10px) translateY(-7px);
+        font-size: .65em;
+        padding: 0 10px;
+        background-color: #526D82;
+        border-left: 4px solid #DDE6ED;
+        border-right: 4px solid #DDE6ED;
+        letter-spacing: 0.2em;
+    }
+
+    .inputbox:nth-child(2) input:valid~span,
+    .inputbox:nth-child(2) input:focus~span {
+        background: #526D82;
+        color: #DDE6ED;
+        border-radius: 3px;
+    }
+
+    .inputbox input:valid,
+    .inputbox input:focus {
+        border: 3px solid #DDE6ED;
+    }
+    button {
+        width: 25%;
+        justify-self: center;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+}
