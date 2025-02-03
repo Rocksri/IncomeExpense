@@ -56,7 +56,7 @@ h2 {
         .inputbox input:valid ~ span,
         .inputbox input:focus ~ span {
             color: #578E7E;
-            transform: translateX(10px) translateY(-7px);
+            transform: translateY(-20px);
             font-size: .65em;
             padding: 0 10px;
             background-color: #F5ECD5;
